@@ -9,11 +9,11 @@ use React\Dns\Config\Config as DnsConfig;
 use React\EventLoop\Factory as LoopFactory;
 use React\Dns\Resolver\Factory as DnsFactory;
 use React\Dns\Resolver\Resolver as ReactDnsResolver;
-use BeyondCode\LaravelWebSockets\Statistics\DnsResolver;
 use BeyondCode\LaravelWebSockets\PubSub\PubSubInterface;
-use BeyondCode\LaravelWebSockets\PubSub\Redis\RedisClient;
+use BeyondCode\LaravelWebSockets\Statistics\DnsResolver;
 use BeyondCode\LaravelWebSockets\Facades\StatisticsLogger;
 use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
+use BeyondCode\LaravelWebSockets\PubSub\Redis\RedisClient;
 use BeyondCode\LaravelWebSockets\Server\Logger\HttpLogger;
 use BeyondCode\LaravelWebSockets\Server\WebSocketServerFactory;
 use BeyondCode\LaravelWebSockets\Server\Logger\ConnectionLogger;
@@ -138,7 +138,6 @@ class StartWebSocketServer extends Command
             ->run();
     }
 
-
     protected function configurePubSubReplication()
     {
         if (config('websockets.replication.enabled') !== true) {
@@ -155,7 +154,6 @@ class StartWebSocketServer extends Command
 
         return $this;
     }
-
 
     protected function getDnsResolver(): ReactDnsResolver
     {
