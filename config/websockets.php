@@ -124,4 +124,10 @@ return [
      * `ChannelManager` interface provided by this package.
      */
     'channel_manager' => \BeyondCode\LaravelWebSockets\WebSockets\Channels\ChannelManagers\ArrayChannelManager::class,
+
+    /*
+     * Redis Connection for the Redis Channel Manager
+     * If enabled this is the redis connection that will be used to store & retrieve channels.
+     */
+    'redis_connection' => 'default'
 ];
